@@ -1,0 +1,1 @@
+/nix/store/4xs1xyj8728yvh9y5v6ji819kwgfy2fv-gcc-wrapper-10.3.0/bin/g++ -O3 -DNDEBUG -rdynamic CMakeFiles/sample_prime_numbers.dir/sample_prime_numbers.cpp.o -o ../bin/sample_prime_numbers  ../lib/libPolynom.a 
