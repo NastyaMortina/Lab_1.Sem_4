@@ -13,9 +13,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: algebraPolynom
+    - name: 1s
+      run: 1s
+    - name: cmake
       run: cmake .
     - name: make
       run: make
-    - name: TestStart
+    - name: testStart
       run: ./AlgebraPolinom/build/bin/test_Polynom
