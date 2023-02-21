@@ -22,4 +22,4 @@ jobs:
     - name: make
       run: make
     - name: testStart
-      run: AlgebraPolinom/build/bin/test_Polynom
+      run: ./AlgebraPolinom/bin/test_Polynom
