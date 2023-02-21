@@ -17,7 +17,7 @@ jobs:
       run: ls
       
     - name: cmake
-      run: cmake .
+      run: cmake AlgebraPolinom .
       
     - name: make
       run: make
