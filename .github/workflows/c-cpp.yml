@@ -13,8 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: 1s
-      run: 1s
     - name: cmake
       run: cmake .
     - name: make
