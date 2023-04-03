@@ -1,2 +1,35 @@
-﻿  interface.cpp
-  base.vcxproj -> C:\Users\shush\source\repos\lab-algebra-polynomial\x64\Debug\base.exe
+﻿  BaseTable.cpp
+  HashTableOnList.cpp
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\HashTableOnList.cpp(8,18): warning C4267: *=: преобразование из "size_t" в "int"; возможна потеря данных
+  HashTableSomething.cpp
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\HashTableSomething.h(27,25): warning C4267: *=: преобразование из "size_t" в "int"; возможна потеря данных
+  Interface.cpp
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\HashTableSomething.h(27,25): warning C4267: *=: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Postfix.h(25,1): warning C4267: инициализация: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Interface.cpp(146,27): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Interface.cpp(184,13): warning C4101: code: неиспользованная локальная переменная
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Interface.cpp(311,27): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Interface.cpp(351,13): warning C4101: code: неиспользованная локальная переменная
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Interface.cpp(401,29): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Interface.cpp(409,14): warning C4101: i: неиспользованная локальная переменная
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Interface.cpp(435,13): warning C4101: i: неиспользованная локальная переменная
+  LineTable.cpp
+  OrderedTableOnArray.cpp
+  Polynom.cpp
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Polynom.cpp(13,40): warning C4554: "|": проверьте приоритет операторов на ошибки; для уточнения приоритета используйте скобки
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Polynom.cpp(130,52): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Polynom.cpp(220,13): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  Postfix.cpp
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Postfix.h(25,1): warning C4267: инициализация: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Postfix.cpp(8,61): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Postfix.cpp(42,31): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Postfix.cpp(99,32): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Postfix.cpp(142,57): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Postfix.cpp(151,57): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  SearchTreeTable.cpp
+  UnorderedTableOnList.cpp
+  main.cpp
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\HashTableSomething.h(27,25): warning C4267: *=: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Postfix.h(25,1): warning C4267: инициализация: преобразование из "size_t" в "unsigned int"; возможна потеря данных
+  Создание кода...
+  base.vcxproj -> C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\x64\Debug\base.exe
