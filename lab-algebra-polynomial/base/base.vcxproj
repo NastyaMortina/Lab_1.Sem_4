@@ -19,11 +19,31 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="interface.cpp" />
+    <ClCompile Include="BaseTable.cpp" />
+    <ClCompile Include="HashTableOnList.cpp" />
+    <ClCompile Include="HashTableSomething.cpp" />
+    <ClCompile Include="Interface.cpp" />
+    <ClCompile Include="LineTable.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="OrderedTableOnArray.cpp" />
+    <ClCompile Include="Polynom.cpp" />
+    <ClCompile Include="Postfix.cpp" />
+    <ClCompile Include="SearchTreeTable.cpp" />
+    <ClCompile Include="UnorderedTableOnList.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="interface.h" />
+    <ClInclude Include="BaseTable.h" />
+    <ClInclude Include="HashTableOnList.h" />
+    <ClInclude Include="HashTableSomething.h" />
+    <ClInclude Include="Interface.h" />
+    <ClInclude Include="LineTable.h" />
+    <ClInclude Include="List.h" />
+    <ClInclude Include="OrderedTableOnArray.h" />
+    <ClInclude Include="Polynom.h" />
+    <ClInclude Include="Postfix.h" />
+    <ClInclude Include="SearchTreeTable.h" />
+    <ClInclude Include="Stack.h" />
+    <ClInclude Include="UnorderedTableOnList.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
