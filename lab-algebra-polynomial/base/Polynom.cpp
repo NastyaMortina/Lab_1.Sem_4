@@ -25,7 +25,7 @@ int Polynom::GetDegree(char p)
 Polynom::Polynom(const Polynom& pl)
 {
 	this->prefix = pl.prefix;
-	this->polinom = pl.polinom;
+	this->polynom = pl.polynom;
 }
 
 void Polynom::Convert()
@@ -96,35 +96,35 @@ void Polynom::Convert()
 			if (!sign)
 				monom.koef = monom.koef * (-1);
 		}
-		if (polinom.IsEmpty())
+		if (polynom.IsEmpty())
 		{
-			polinom.PushBack(monom);
+			polynom.PushBack(monom);
 			continue;
 		}
-		for (it = polinom.Begin(); it != polinom.End(); ++it)
+		for (it = polynom.Begin(); it != polynom.End(); ++it)
 		{
 			if (monom.deg == it->data.deg)
 			{
 				it->data.koef = it->data.koef + monom.koef;
 				if (it->data.koef == 0)
-					polinom.Erase(it);
+					polynom.Erase(it);
 				break;
 			}
 			if (monom.deg > it->data.deg)
 			{
-				polinom.Insert(it, monom);
+				polynom.Insert(it, monom);
 				break;
 			}
 		}
-		if (it == polinom.End())
-			polinom.PushBack(monom);
+		if (it == polynom.End())
+			polynom.PushBack(monom);
 	}
 }
 
 int Polynom::CalculateInPoint(int _x, int _y, int _z)
 {
 	int result = 0;
-	for (auto it = polinom.Begin(); it != polinom.End(); ++it)
+	for (auto it = polynom.Begin(); it != polynom.End(); ++it)
 	{
 		int x = it->data.deg / 100, y = (it->data.deg / 10) % 10, z = it->data.deg % 10;
 		result += (pow(_x, x) * pow(_y, y) * pow(_z, z)) * it->data.koef;
@@ -134,14 +134,14 @@ int Polynom::CalculateInPoint(int _x, int _y, int _z)
 
 Polynom Polynom::Sort()
 {
-	if (this->polinom.IsEmpty())
-		throw "Polinom is empty";
+	if (this->polynom.IsEmpty())
+		throw "polynom is empty";
 	Polynom res;
 	List<Monom>::iterator right, left, max;
-	for (right = this->polinom.Begin(); right != this->polinom.End(); ++right)
+	for (right = this->polynom.Begin(); right != this->polynom.End(); ++right)
 	{
 		max->data = right->data;
-		for (left = right; left != this->polinom.End(); ++left)
+		for (left = right; left != this->polynom.End(); ++left)
 		{
 			if (right->data.deg < left->data.deg)
 			{
@@ -156,62 +156,62 @@ Polynom Polynom::Sort()
 
 Polynom Polynom::operator+(Polynom& pl)
 {
-	if (this->polinom.IsEmpty() || pl.polinom.IsEmpty())
-		throw "Polinom is empty";
+	if (this->polynom.IsEmpty() || pl.polynom.IsEmpty())
+		throw "polynom is empty";
 	Polynom result;
 	List<Monom>::iterator right, left;
 	bool check = false;
-	for (right = pl.polinom.Begin(); right != pl.polinom.End(); ++right)
+	for (right = pl.polynom.Begin(); right != pl.polynom.End(); ++right)
 	{
 		check = false;
-		for (left = this->polinom.Begin(); left != this->polinom.End(); ++left)
+		for (left = this->polynom.Begin(); left != this->polynom.End(); ++left)
 			if (right->data.deg == left->data.deg)
 			{
 				if ((left->data.koef + right->data.koef) != 0)
-					result.polinom.PushBack(*(left)+*(right));
+					result.polynom.PushBack(*(left)+*(right));
 				check = true;
 			}
 		if (check == false)
-			result.polinom.PushBack(*right);
+			result.polynom.PushBack(*right);
 	}
 	check = false;
-	for (left = this->polinom.Begin(); left != this->polinom.End(); ++left)
+	for (left = this->polynom.Begin(); left != this->polynom.End(); ++left)
 	{
 		check = false;
-		right = pl.polinom.Begin();
-		for (right = pl.polinom.Begin(); right != pl.polinom.End(); ++right)
+		right = pl.polynom.Begin();
+		for (right = pl.polynom.Begin(); right != pl.polynom.End(); ++right)
 			if (left->data.deg == right->data.deg)
 				check = true;
 		if (check == false)
-			result.polinom.PushBack(*left);
+			result.polynom.PushBack(*left);
 	}
-	if (result.polinom.IsEmpty())
+	if (result.polynom.IsEmpty())
 	{
-		right = pl.polinom.Begin();
+		right = pl.polynom.Begin();
 		right->data.koef = 0;
 		right->data.name = "";
 		right->data.deg = 0;
-		result.polinom.PushBack(*right);
+		result.polynom.PushBack(*right);
 	}
 	return result.Sort();
 }
 
 Polynom Polynom::operator-(Polynom& pl)
 {
-	if (this->polinom.IsEmpty() || pl.polinom.IsEmpty())
-		throw "Polinom is empty";
+	if (this->polynom.IsEmpty() || pl.polynom.IsEmpty())
+		throw "polynom is empty";
 	Polynom result;
 	List<Monom>::iterator right, left;
 	bool check = false;
-	for (right = pl.polinom.Begin(); right != pl.polinom.End(); ++right)
+	for (right = pl.polynom.Begin(); right != pl.polynom.End(); ++right)
 	{
 		check = false;
-		for (left = this->polinom.Begin(); left != this->polinom.End(); ++left)
+		for (left = this->polynom.Begin(); left != this->polynom.End(); ++left)
 			if (right->data.deg == left->data.deg)
 			{
 				if ((left->data.koef - right->data.koef) != 0)
 				{
-					result.polinom.PushBack(*(left)-*(right));
+					result.polynom.PushBack(*(left)-*(right));
 				}
 				check = true;
 			}
@@ -219,43 +219,43 @@ Polynom Polynom::operator-(Polynom& pl)
 		{
 			int koef = right->data.koef;
 			right->data.koef = (-1) * right->data.koef;
-			result.polinom.PushBack(*right);
+			result.polynom.PushBack(*right);
 			right->data.koef = koef;
 		}
 	}
 	check = false;
-	for (left = this->polinom.Begin(); left != this->polinom.End(); ++left)
+	for (left = this->polynom.Begin(); left != this->polynom.End(); ++left)
 	{
 		check = false;
-		right = pl.polinom.Begin();
-		for (right = pl.polinom.Begin(); right != pl.polinom.End(); ++right)
+		right = pl.polynom.Begin();
+		for (right = pl.polynom.Begin(); right != pl.polynom.End(); ++right)
 			if (left->data.deg == right->data.deg)
 				check = true;
 		if (check == false)
-			result.polinom.PushBack(*left);
+			result.polynom.PushBack(*left);
 	}
 	return result.Sort();
 }
 
 Polynom Polynom::operator*(Polynom& pl)
 {
-	if (this->polinom.IsEmpty() || pl.polinom.IsEmpty())
-		throw "Polinom is empty";
+	if (this->polynom.IsEmpty() || pl.polynom.IsEmpty())
+		throw "polynom is empty";
 	Polynom result;
 	List<Monom>::iterator right, left;
-	for (right = this->polinom.Begin(); right != this->polinom.End();)
+	for (right = this->polynom.Begin(); right != this->polynom.End();)
 	{
-		for (left = pl.polinom.Begin(); left != this->polinom.End();)
+		for (left = pl.polynom.Begin(); left != this->polynom.End();)
 		{
 			if ((right->data.koef * left->data.koef) != 0)
-				result.polinom.PushBack((*(right)) * (*(left)));
+				result.polynom.PushBack((*(right)) * (*(left)));
 			++left;
 		}
 		++right;
 	}
-	while (left != pl.polinom.End())
+	while (left != pl.polynom.End())
 	{
-		result.polinom.PushBack(*left);
+		result.polynom.PushBack(*left);
 		++left;
 	}
 	return result.Sort();
@@ -263,7 +263,7 @@ Polynom Polynom::operator*(Polynom& pl)
 
 Polynom& Polynom::operator=(const Polynom& pl)
 {
-	this->polinom = pl.polinom;
+	this->polynom = pl.polynom;
 	this->prefix = pl.prefix;
 	return *this;
 }
@@ -278,16 +278,16 @@ bool Polynom::operator==(const Polynom& pl)const
 
 ostream& operator<<(ostream& os, Polynom& pl)
 {
-	if (pl.polinom.IsEmpty()) {
+	if (pl.polynom.IsEmpty()) {
 		os << pl.prefix;
 	}
 	else
 	{
-		for (auto it = pl.polinom.Begin(); it != pl.polinom.End(); ++it)
+		for (auto it = pl.polynom.Begin(); it != pl.polynom.End(); ++it)
 		{
 			if (it->data.deg != 0)
 			{
-				if (it != pl.polinom.Begin() && it->data.koef > 0)
+				if (it != pl.polynom.Begin() && it->data.koef > 0)
 					os << '+';
 				if ((it->data.koef != 1) && (it->data.koef != -1))
 				{
@@ -304,7 +304,7 @@ ostream& operator<<(ostream& os, Polynom& pl)
 			}
 			else
 			{
-				if (it != pl.polinom.Begin() && it->data.koef > 0)
+				if (it != pl.polynom.Begin() && it->data.koef > 0)
 					os << '+';
 				os << it->data.koef;
 			}
@@ -315,7 +315,7 @@ ostream& operator<<(ostream& os, Polynom& pl)
 
 istream& operator>>(istream& is, Polynom& pl)
 {
-	for (auto it = pl.polinom.Begin(); it != pl.polinom.End(); ++it)
+	for (auto it = pl.polynom.Begin(); it != pl.polynom.End(); ++it)
 	{
 		if ((it->data.koef != 1) && (it->data.name != "\0"))
 		{
@@ -330,15 +330,15 @@ istream& operator>>(istream& is, Polynom& pl)
 	return is;
 }
 
-//void Polynom::SaveInFile(Polynom& polinom1, Polynom& polinom2, Polynom& multiplication, Polynom& subtraction, Polynom& addition)
+//void Polynom::SaveInFile(Polynom& polynom1, Polynom& polynom2, Polynom& multiplication, Polynom& subtraction, Polynom& addition)
 //{
 //	ofstream out;
-//	out.open("Polinom.txt");
+//	out.open("polynom.txt");
 //	if (out.is_open())
 //	{
 //		out << "Исходные полиномы:" << endl;
-//		out << "F = " << polinom1 << endl;
-//		out << "G = " << polinom2 << endl;
+//		out << "F = " << polynom1 << endl;
+//		out << "G = " << polynom2 << endl;
 //		out << "Результаты исчислений:" << endl;
 //		out << "F*G = " << multiplication << endl;
 //		out << "F-G = " << subtraction << endl;
@@ -347,16 +347,16 @@ istream& operator>>(istream& is, Polynom& pl)
 //	out.close();
 //}
 
-//void Polynom::SaveInFile(Polynom& polinom1, Polynom& polinom2, Polynom& multiplication,
+//void Polynom::SaveInFile(Polynom& polynom1, Polynom& polynom2, Polynom& multiplication,
 //	int calMultiplication, Polynom& subtraction, int calSubtraction, Polynom& addition, int calAddition, int _x, int _y, int _z)
 //{
 //	ofstream out;
-//	out.open("Polinom.txt");
+//	out.open("polynom.txt");
 //	if (out.is_open())
 //	{
 //		out << "Исходные полиномы:" << endl;
-//		out << "F = " << polinom1 << endl;
-//		out << "G = " << polinom2 << endl;
+//		out << "F = " << polynom1 << endl;
+//		out << "G = " << polynom2 << endl;
 //		out << "Результаты исчислений:" << endl;
 //		out << "F*G = " << multiplication << endl;
 //		out << "F*G(" << _x << "," << _y << "," << _z << ") = " << calMultiplication << endl;
@@ -371,7 +371,7 @@ istream& operator>>(istream& is, Polynom& pl)
 //void Polynom::ReadFile()
 //{
 //	string line;
-//	ifstream in("Polinom.txt"); // окрываем файл для чтения
+//	ifstream in("polynom.txt"); // окрываем файл для чтения
 //	if (in.is_open())
 //		while (getline(in, line))
 //			cout << line << endl;
@@ -386,57 +386,57 @@ string Polynom::GetPrefix()
 Polynom& Polynom::IntegrateDX(Polynom& p1)
 {
 	List <Monom> result;
-	for (auto it = p1.polinom.Begin(); it != p1.polinom.End(); ++it)
+	for (auto it = p1.polynom.Begin(); it != p1.polynom.End(); ++it)
 	{
 		cout << "Попали в IntegrateDX текущий result " << endl;
 		int degMonom = it->data.deg + 100;
 		int newDegX = degMonom / 100;
-		double koefPolinom = it->data.koef;
-		double newKoefPolinom = koefPolinom / newDegX;
+		double koefpolynom = it->data.koef;
+		double newKoefpolynom = koefpolynom / newDegX;
 		string nameMonom = p1.nameNewMonom(degMonom);
-		cout << degMonom << " " << newKoefPolinom << endl;
-		Monom newMonom(newKoefPolinom, degMonom, nameMonom);
+		cout << degMonom << " " << newKoefpolynom << endl;
+		Monom newMonom(newKoefpolynom, degMonom, nameMonom);
 		result.PushBack(newMonom);
 	}
-	this->polinom = result;
+	this->polynom = result;
 	return *this;
 }
 
 Polynom& Polynom::IntegrateDY(Polynom& p1)
 {
 	List <Monom> result;
-	for (auto it = p1.polinom.Begin(); it != p1.polinom.End(); ++it)
+	for (auto it = p1.polynom.Begin(); it != p1.polynom.End(); ++it)
 	{
 		cout << "Попали в IntegrateDY текущий result " << endl;
 		int degMonom = it->data.deg + 10;
 		int newDegY = (degMonom / 10) % 10;
-		double koefPolinom = it->data.koef;
-		double newKoefPolinom = koefPolinom / newDegY;
+		double koefpolynom = it->data.koef;
+		double newKoefpolynom = koefpolynom / newDegY;
 		string nameMonom = p1.nameNewMonom(degMonom);
-		cout << degMonom << " " << newKoefPolinom << endl;
-		Monom newMonom(newKoefPolinom, degMonom, nameMonom);
+		cout << degMonom << " " << newKoefpolynom << endl;
+		Monom newMonom(newKoefpolynom, degMonom, nameMonom);
 		result.PushBack(newMonom);
 	}
-	this->polinom = result;
+	this->polynom = result;
 	return *this;
 }
 
 Polynom& Polynom::IntegrateDZ(Polynom& p1)
 {
 	List <Monom> result;
-	for (auto it = p1.polinom.Begin(); it != p1.polinom.End(); ++it)
+	for (auto it = p1.polynom.Begin(); it != p1.polynom.End(); ++it)
 	{
 		cout << "Попали в IntegrateDZ текущий result " << endl;
 		int degMonom = it->data.deg + 1;
 		int newDegZ = degMonom % 10;
-		double koefPolinom = it->data.koef;
-		double newKoefPolinom = koefPolinom / newDegZ;
+		double koefpolynom = it->data.koef;
+		double newKoefpolynom = koefpolynom / newDegZ;
 		string nameMonom = p1.nameNewMonom(degMonom);
-		cout << degMonom << " " << newKoefPolinom << endl;
-		Monom newMonom(newKoefPolinom, degMonom, nameMonom);
+		cout << degMonom << " " << newKoefpolynom << endl;
+		Monom newMonom(newKoefpolynom, degMonom, nameMonom);
 		result.PushBack(newMonom);
 	}
-	this->polinom = result;
+	this->polynom = result;
 	return *this;
 }
 
@@ -464,7 +464,7 @@ string Polynom::nameNewMonom(int _deg)
 Polynom& Polynom::DerivativeDX(Polynom& p1)
 {
 	List <Monom> result;
-	for (auto it = p1.polinom.Begin(); it != p1.polinom.End(); ++it)
+	for (auto it = p1.polynom.Begin(); it != p1.polynom.End(); ++it)
 	{
 		cout << "Попали в DerivativeDX текущий result " << endl;
 
@@ -476,14 +476,14 @@ Polynom& Polynom::DerivativeDX(Polynom& p1)
 		Monom newMonom(newKoef, newDegMonom, nameMonom);
 		result.PushBack(newMonom);
 	}
-	this->polinom = result;
+	this->polynom = result;
 	return *this;
 }
 
 Polynom& Polynom::DerivativeDY(Polynom& p1)
 {
 	List <Monom> result;
-	for (auto it = p1.polinom.Begin(); it != p1.polinom.End(); ++it)
+	for (auto it = p1.polynom.Begin(); it != p1.polynom.End(); ++it)
 	{
 		cout << "Попали в DerivativeDY текущий result " << endl;
 
@@ -495,14 +495,14 @@ Polynom& Polynom::DerivativeDY(Polynom& p1)
 		Monom newMonom(newKoef, newDegMonom, nameMonom);
 		result.PushBack(newMonom);
 	}
-	this->polinom = result;
+	this->polynom = result;
 	return *this;
 }
 
 Polynom& Polynom::DerivativeDZ(Polynom& p1)
 {
 	List <Monom> result;
-	for (auto it = p1.polinom.Begin(); it != p1.polinom.End(); ++it)
+	for (auto it = p1.polynom.Begin(); it != p1.polynom.End(); ++it)
 	{
 		double newKoef = it->data.koef * (it->data.deg % 10);
 		int newDegMonom = it->data.deg - 1; 
@@ -512,7 +512,7 @@ Polynom& Polynom::DerivativeDZ(Polynom& p1)
 		Monom newMonom(newKoef, newDegMonom, nameMonom);
 		result.PushBack(newMonom);
 	}
-	this->polinom = result;
+	this->polynom = result;
 	return *this;
 }
 
@@ -522,7 +522,7 @@ string Polynom::CreateString()
 	int powX, powY, powZ;
 	double mulMonom;
 
-	auto it = this->polinom.Begin();
+	auto it = this->polynom.Begin();
 	if (it->pNext != nullptr)
 	{
 		powX = it->data.deg / 100;

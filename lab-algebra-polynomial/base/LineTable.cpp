@@ -65,7 +65,7 @@ void LineTable::print()
 {
 	std::cout << "\t Линейная на массиве " << std::endl;
 	for (int i = 0; i < size; i++)
-		cout << dat[i].key << ":\t" << dat[i].polinomString << endl;
+		cout << dat[i].key << ":\t" << dat[i].polynomString << endl;
 	if (size == 0)
 		cout << "Empty" << endl;
 }

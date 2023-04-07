@@ -21,7 +21,7 @@ class SearchTreeTable : public BaseTable {
 		if (p != nullptr)
 		{
 			TempPrint(p->pLeft);
-			std::cout << p->d.key << ":\t" << p->d.polinomString << std::endl;
+			std::cout << p->d.key << ":\t" << p->d.polynomString << std::endl;
 			TempPrint(p->pRight);
 		}
 	}

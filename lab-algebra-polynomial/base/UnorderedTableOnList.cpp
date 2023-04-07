@@ -40,7 +40,7 @@ void UnorderedTableOnList::insert(const Data& d)
 		Head = new Link;
 		Head->data.key = d.key;
 		Head->data._polynom = d._polynom;
-		Head->data.polinomString = d.polinomString;
+		Head->data.polynomString = d.polynomString;
 		Head->pNext = nullptr;
 		Amount++;
 		return;
@@ -51,7 +51,7 @@ void UnorderedTableOnList::insert(const Data& d)
 	Link* p = new Link;
 	p->data.key = d.key;
 	p->data._polynom = d._polynom;
-	p->data.polinomString = d.polinomString;
+	p->data.polynomString = d.polynomString;
 	p->pNext = Head;
 	Head = p;
 	Amount++;
@@ -98,12 +98,12 @@ void UnorderedTableOnList::print()
 	else
 	{
 		Link* p = Head;
-		cout << p->data.key << ":\t" << p->data.polinomString << endl;
+		cout << p->data.key << ":\t" << p->data.polynomString << endl;
 
 		while (p->pNext != nullptr)
 		{
 			p = p->pNext;
-			cout << p->data.key << ":\t" << p->data.polinomString << endl;
+			cout << p->data.key << ":\t" << p->data.polynomString << endl;
 		}
 	}
 }

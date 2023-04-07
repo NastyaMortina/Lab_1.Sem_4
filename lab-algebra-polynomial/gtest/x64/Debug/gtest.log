@@ -1,0 +1,17 @@
+﻿  test_hashtableonlist.cpp
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\HashTableOnList.cpp(8,18): warning C4267: *=: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\gtest\test_hashtableonlist.cpp(66,30): warning C4267: *=: преобразование из "size_t" в "int"; возможна потеря данных
+  test_hashtablesomething.cpp
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\HashTableSomething.h(27,25): warning C4267: *=: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\gtest\test_hashtablesomething.cpp(72,30): warning C4267: *=: преобразование из "size_t" в "int"; возможна потеря данных
+  test_linetable.cpp
+  test_list.cpp
+  test_orderedtableonarray.cpp
+  test_polynom.cpp
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Polynom.cpp(13,40): warning C4554: "|": проверьте приоритет операторов на ошибки; для уточнения приоритета используйте скобки
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Polynom.cpp(130,52): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Polynom.cpp(220,13): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  test_searchtreetable.cpp
+  test_unorderedtableonlist.cpp
+  Создание кода...
+  gtest.vcxproj -> C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\x64\Debug\gtest.exe

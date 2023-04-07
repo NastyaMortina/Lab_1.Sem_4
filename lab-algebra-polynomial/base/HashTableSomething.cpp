@@ -42,23 +42,23 @@ void HashTableSomething::insert(const Data& data)
 	if (Tab[InsertHash] == nullptr) {
 		Tab[InsertHash] = new Data;
 		Tab[InsertHash]->key = data.key;
-		Tab[InsertHash]->polinomString = data.polinomString;
+		Tab[InsertHash]->polynomString = data.polynomString;
 		Tab[InsertHash]->_polynom = data._polynom;
 		return;
 	}
 	else {
-		if (Tab[InsertHash]->polinomString == data.polinomString) { throw exception(); }
+		if (Tab[InsertHash]->polynomString == data.polynomString) { throw exception(); }
 		for (int i = 0; i < 10; i++) {
 			InsertHash = (InsertHash + 7) % 1000;
 			if (Tab[InsertHash] == nullptr) {
 				Tab[InsertHash] = new Data;
 				Tab[InsertHash]->key = data.key;
-				Tab[InsertHash]->polinomString = data.polinomString;
+				Tab[InsertHash]->polynomString = data.polynomString;
 				Tab[InsertHash]->_polynom = data._polynom;
 
 				return;
 			}
-			else { if (Tab[InsertHash]->polinomString == data.polinomString) { throw exception(); } }
+			else { if (Tab[InsertHash]->polynomString == data.polynomString) { throw exception(); } }
 
 		}
 
@@ -79,5 +79,5 @@ void HashTableSomething::print()
 {
 	cout << "\tХэш-таблица" << endl;
 	for (int i = 0; i < 1000; i++)
-		if (Tab[i] != nullptr) { cout << Tab[i]->key << ":\t" << Tab[i]->polinomString << endl; }
+		if (Tab[i] != nullptr) { cout << Tab[i]->key << ":\t" << Tab[i]->polynomString << endl; }
 }

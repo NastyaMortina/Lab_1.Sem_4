@@ -82,7 +82,7 @@ int Interface::inputControl(int left_board, int right_board, void (*print)(const
 	return number;
 }
 
-void printPolinomOperation(const string& str)
+void printPolynomOperation(const string& str)
 {
 	cout << " 1 - Посчитать полином в точке" << endl;
 	cout << " 2 - Проинтегрировать по X" << endl;
@@ -116,7 +116,7 @@ void Interface::menu()
 		code = inputControl(1, 7, printMenuList, str);
 		switch (code) 
 		{
-			case 1: addPolinom(); break; 
+			case 1: addPolynom(); break; 
 			case 2: searchAndMakeOperations(); break; 
 			case 3: calculate(); break; 
 			case 4: print(); break; 
@@ -154,19 +154,19 @@ void keyRules()
 	cout << "Не использовать построниие знаки." << endl;
 }
 
-void polinomRules()
+void polynomRules()
 {
 	cout << "Правила ввода полинома" << endl;
 	cout << "Максимальная степень неизвестных 9. " << endl;
 	cout << "В качестве переменных можно вводить только x,y,x. " << endl;
 }
 
-void Interface::addPolinom()
+void Interface::addPolynom()
 {
 	cout << "----------------------- 1.Добавление полинома -----------------------" << endl;
 	Data data;
 	keyRules(); 
-	polinomRules(); 
+	polynomRules(); 
 	try
 	{
 		cout << "Введите имя полинома: " << endl;
@@ -174,9 +174,9 @@ void Interface::addPolinom()
 		getline(cin, data.key);
 		data.key = controlKey(data.key + " "); //не реализовано, но в нем большой потенциал
 		cout << "Введите сам полином: " << endl;
-		getline(cin, data.polinomString);
-		data.polinomString = controlPolynom(data.polinomString);
-		Polynom p(data.polinomString);
+		getline(cin, data.polynomString);
+		data.polynomString = controlPolynom(data.polynomString);
+		Polynom p(data.polynomString);
 		data._polynom = p;
 		for (int i = 0; i < 6; i++)
 			tables[i]->insert(data);
@@ -220,7 +220,7 @@ void Interface::searchAndMakeOperations()
 			int code;
 			string temp = str;
 			int check;
-			temp += "\nИмя полинома: " + data->key + "\nНайденный полином: " + data->polinomString;
+			temp += "\nИмя полинома: " + data->key + "\nНайденный полином: " + data->polynomString;
 			cout << temp << endl;
 			cout << "Хотите ли Вы произвести действия над этим полиномом?" << endl;
 			cout << "Введите 1 - да или 0 - нет." << endl;
@@ -231,10 +231,10 @@ void Interface::searchAndMakeOperations()
 			}
 			if (check == 1)
 			{
-				Polynom polinom(data->polinomString);
-				polinom.Convert();
+				Polynom polynom(data->polynomString);
+				polynom.Convert();
 				do {
-					code = inputControl(1, 10, printPolinomOperation, " ");
+					code = inputControl(1, 10, printPolynomOperation, " ");
 					switch (code)
 					{
 						case 1:
@@ -247,49 +247,49 @@ void Interface::searchAndMakeOperations()
 							cout << "Введите значение z: " << endl;
 							cin >> z;
 							cout << "Происходит подсчет." << endl;
-							cout << polinom.CalculateInPoint(x, y, z) << endl;
-							cout << polinom << endl;
+							cout << polynom.CalculateInPoint(x, y, z) << endl;
+							cout << polynom << endl;
 							break;
 						}
 						case 2:
 						{
 							Polynom newP;
-							newP.IntegrateDX(polinom);
+							newP.IntegrateDX(polynom);
 							cout << "Интеграл по X " << newP << endl;
 							break;
 						}
 						case 3://Integral(d, y)
 						{
 							Polynom newP;
-							newP.IntegrateDY(polinom);
+							newP.IntegrateDY(polynom);
 							cout << "Интеграл по Y " << newP << endl;
 							break;
 						}
 						case 4: //Integral(d, z)
 						{
 							Polynom newP;
-							newP.IntegrateDZ(polinom);
+							newP.IntegrateDZ(polynom);
 							cout << "Интеграл по Z : " << newP << endl;
 							break;
 						}
 						case 5:
 						{
 							Polynom newP;
-							newP.DerivativeDX(polinom);
+							newP.DerivativeDX(polynom);
 							cout << "Производная по X: " << newP << endl;
 							break;
 						}
 						case 6:
 						{
 							Polynom newP;
-							newP.DerivativeDY(polinom);
+							newP.DerivativeDY(polynom);
 							cout << "Производная по Y: " << newP << endl;
 							break;
 						}
 						case 7:
 						{
 							Polynom newP;
-							newP.DerivativeDZ(polinom);
+							newP.DerivativeDZ(polynom);
 							cout << "Производная по Z: " << newP << endl;
 							break;
 						}
@@ -428,7 +428,7 @@ void Interface::calPol()
 		Data res;
 		res._polynom = post.NewPoly(*Base);
 		res.key = key;
-		res.polinomString = res._polynom.CreateString();
+		res.polynomString = res._polynom.CreateString();
 		for (int i = 0; i < 6; i++)
 			tables[i]->insert(res);
 	}

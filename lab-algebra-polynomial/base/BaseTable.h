@@ -7,7 +7,7 @@
 struct Data
 {
 	std::string key;
-	std::string polinomString;
+	std::string polynomString;
 	Polynom _polynom;
 };
 

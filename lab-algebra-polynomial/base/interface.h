@@ -35,7 +35,7 @@ public:
 	int inputControl(int left_board, int right_board, void (*print)(const string&), const string& str);
 	void tableSelection();
 	void menu();
-	void addPolinom();
+	void addPolynom();
 	void searchAndMakeOperations(); 
 	string controlKey(const string& key);
 	void print();

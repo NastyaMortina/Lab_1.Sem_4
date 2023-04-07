@@ -57,7 +57,7 @@ Polynom Postfix::NewPoly(BaseTable& tab)
                     i++;
                 }
                 if (tab.find(name) != nullptr)
-                    res.push((tab.find(name)->polinomString));
+                    res.push((tab.find(name)->polynomString));
                 else
                     throw 2;
             }
