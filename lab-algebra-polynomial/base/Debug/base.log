@@ -1,0 +1,21 @@
+﻿  BaseTable.cpp
+  HashTableOnList.cpp
+  HashTableSomething.cpp
+  Interface.cpp
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Interface.cpp(184,13): warning C4101: code: неиспользованная локальная переменная
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Interface.cpp(351,13): warning C4101: code: неиспользованная локальная переменная
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Interface.cpp(409,14): warning C4101: i: неиспользованная локальная переменная
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Interface.cpp(435,13): warning C4101: i: неиспользованная локальная переменная
+  LineTable.cpp
+  main.cpp
+  OrderedTableOnArray.cpp
+  Polynom.cpp
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Polynom.cpp(13,40): warning C4554: "|": проверьте приоритет операторов на ошибки; для уточнения приоритета используйте скобки
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Polynom.cpp(39,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Polynom.cpp(130,52): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\base\Polynom.cpp(220,13): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  Postfix.cpp
+  SearchTreeTable.cpp
+  UnorderedTableOnList.cpp
+  Создание кода...
+  base.vcxproj -> C:\Users\shush\Documents\GitHub\Lab_1.Sem_4\lab-algebra-polynomial\Debug\base.exe

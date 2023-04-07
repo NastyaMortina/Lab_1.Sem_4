@@ -1,1 +1,0 @@
-C:\Users\shush\source\repos\lab-algebra-polynomial\gtest\Debug\gtest.lib

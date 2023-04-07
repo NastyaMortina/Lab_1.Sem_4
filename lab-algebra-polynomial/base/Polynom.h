@@ -84,15 +84,15 @@ class Polynom
 {
 private:
 	string prefix;
-	List<Monom> polinom;
+	List<Monom> polynom;
 
 	bool IsSign(char op);
 	bool IsVariable(char op);
 	int GetDegree(char p);
 
 public:
-	Polynom(List<Monom> _polinom) {
-		this->polinom = _polinom;
+	Polynom(List<Monom> _polynom) {
+		this->polynom = _polynom;
 	}
 	Polynom(string _str = "") :prefix(_str) {}
 	Polynom(const Polynom& pl);
@@ -103,8 +103,8 @@ public:
 	Polynom operator*(Polynom& pl);
 	Polynom& operator*(const double& scal)
 	{
-		auto it = this->polinom.Begin();
-		for (auto it = this->polinom.Begin(); it != this->polinom.End(); ++it)
+		auto it = this->polynom.Begin();
+		for (auto it = this->polynom.Begin(); it != this->polynom.End(); ++it)
 		{
 			it->data.koef = it->data.koef * (scal);
 		}
@@ -115,8 +115,8 @@ public:
 	friend ostream& operator<<(ostream& os, Polynom& pl);
 	friend istream& operator>>(istream& is, Polynom& pl);
 	bool operator == (const Polynom& pl)const;
-	//void SaveInFile(Polynom& polinom1, Polynom& polinom2, Polynom& multiplication, Polynom& subtraction, Polynom& addition);
-	//void SaveInFile(Polynom& polinom1, Polynom& polinom2, Polynom& multiplication, int calMultiplication,
+	//void SaveInFile(Polynom& polynom1, Polynom& polynom2, Polynom& multiplication, Polynom& subtraction, Polynom& addition);
+	//void SaveInFile(Polynom& polynom1, Polynom& polynom2, Polynom& multiplication, int calMultiplication,
 	//Polynom& subtraction, int calSubtraction, Polynom& addition, int calAdditio, int _x, int _y, int _z);
 	//void ReadFile();
 	Polynom Sort();

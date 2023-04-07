@@ -42,7 +42,7 @@ void OrderedTableOnArray::insert(const Data& data)
 		Tab[j] = new Data;
 		Tab[j]->key = data.key;
 		Tab[j]->_polynom = data._polynom;
-		Tab[j]->polinomString = data.polinomString;
+		Tab[j]->polynomString = data.polynomString;
 	}
 	else
 	{
@@ -52,7 +52,7 @@ void OrderedTableOnArray::insert(const Data& data)
 		Tab[j] = new Data;
 		Tab[j]->key = data.key;
 		Tab[j]->_polynom = data._polynom;
-		Tab[j]->polinomString = data.polinomString;
+		Tab[j]->polynomString = data.polynomString;
 	}
 	size++;
 	//throw exception();

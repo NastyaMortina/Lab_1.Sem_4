@@ -131,7 +131,7 @@ public:
 		else
 		{
 			if (numberOfElements == MAX_SIZE_LIST)
-				throw("Polinom full");
+				throw("Polynom full");
 			pCurrent->pNext = new Node<type>(tmp);
 			pCurrent = pCurrent->pNext;
 			numberOfElements++;
